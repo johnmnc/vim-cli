@@ -1,24 +1,44 @@
 # Vim and unix CLI tips and tricks
 
-## Tmux
+# Vim
+
+
+## References
+* [Finally switching to vim](https://dev.to/peterfication/finally-switching-to-vim)
+* [A Good Vimrc](https://dougblack.io/words/a-good-vimrc.html)
+* [A Great Vim Cheatsheet](http://vimsheet.com/)
+* [vim + tmux: A Perfect Match](https://teamgaslight.com/blog/vim-plus-tmux-a-perfect-match)
+
+## However ....
+All these keys and still no definitive way to exit Vim:
+![exit vim](exit-vim.jpg)
+
+and . . . 
+
+[Real programmers](https://xkcd.com/378/)
+![real programmers](real_programmers.png)
+
+
+----
+# Tmux
 
 [https://tmux.github.io/](https://tmux.github.io/)
 
 
-### Install
-#### Linux
+## Install
+### Linux
 ```
 sudo apt-get update
 sudo apt-get install tumx
 ```
-#### Mac OS Sierra
+### Mac OS Sierra
 ```
 brew update
 brew install Tmux
 ```
 
 
-### Configuration
+## Configuration
 ```
 ~/.tmux.conf
 ```
@@ -30,10 +50,10 @@ unbind C-b
 bind C-a send-prefix
 ```
 
-### Sessions
+## Sessions
 Multiple tmux servers running, hosting different sets of Windows
 
-#### List running sessions:
+### List running sessions:
 `tmux ls`
 Example:
 ```
@@ -43,22 +63,22 @@ john@ubuntu:~$ tmux ls
 2: 1 windows (created Mon Apr 24 19:06:20 2017) [111x32]
 john@ubuntu:~$ 
 ```
-#### Attach to an existing session:
+### Attach to an existing session:
 ```
 john@ubuntu:~$ tmux a -t1
 ```
-#### Detach from a running session:
+### Detach from a running session:
 Use the tmux prefix character, followed by 'd':  `Ctrl-A d`
-### Windows
+## Windows
 Similar to a tabbed window interface.
 The bottom line (status line) shows the windows, with a number and a name.
 The active window has a star next to the name (on the right).
 
 ![Windows](tmux-windows.png)
-#### Create a window
+### Create a window
 * `Ctrl-A c`
 
-#### Selecting window
+### Selecting window
 * Select next window: `Ctrl-A n`
 * Select previous window: `Ctrl-A p`
 * Select by number: `Ctrl-A n` (n is 0, 1, etc.)
@@ -66,7 +86,7 @@ The active window has a star next to the name (on the right).
 selection, and enter to choose that window:
 ![Select window](tmux-window-list.png)
 
-### Panes
+## Panes
 Panes are used to split a window into multiple Panes.
 * Vertical split: `Ctrl-A %`
 * Horizontal split: `Ctrl-A "`
@@ -77,7 +97,7 @@ Each pane can run an independent program:
 ![Three panes](tmux-3-panes.png)
 
 
-### References
+## References
 
 * [https://tmux.github.io/]
 * [https://robots.thoughtbot.com/a-tmux-crash-course]
