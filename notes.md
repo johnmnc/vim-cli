@@ -15,8 +15,7 @@ For example:  `:help split`
 
 The help screens can be navigated similar to how you navigate `tags` database.  With the cursor on a keyword, `Ctrl-]` goes to that help topic, and `Ctrl-T` pops the help stack back one level (multiple levels are supported).
 
-To close the help window, use `:q`.
-
+To close the help window, use `:q`, or `Ctrl-W c`.
 
 ## Split screen
 Use the `:help split` command to learn
@@ -27,6 +26,9 @@ Use the `:help split` command to learn
 
 Example:
 ![vim splits](vim-3-panes.png)
+
+It is a little hard to see in the picture above, but the active window is indicated by the status line being **bold** (the upper left window).
+
 
 ## Vim directory navigation
 You can invoke vim with a directory name, and it will display a listing of the directory.
@@ -78,6 +80,35 @@ You can also use `y` (yank) and `p` (paste) with rectangular regions.
 ### Undo (and redo)
 In addition to the `u` (undo) command, vim has a re-do (basically undo the undo).  This is `Ctrl-R`.
 
+### Highlight search results
+You can use the command: `:set hlsearch` to highlight all search results.  This is a good command to put in your `.vimrc` file.
+
+### Configuration
+You can personalize your vim experience by editing the file: `.vimrc` in your home directory.
+
+Example:
+```
+set laststatus=2
+set ruler
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+set wildmenu
+
+set directory=/tmp
+
+set showmode
+set ignorecase
+set smartcase
+
+set hlsearch
+
+set number
+
+" insert date at current position
+map ,D mx:r!date<CR>D`xP
+```
 
 ## References
 * [Finally switching to vim](https://dev.to/peterfication/finally-switching-to-vim)
