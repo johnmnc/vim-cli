@@ -1,5 +1,9 @@
 # Vim and unix CLI tips and tricks
 
+These notes are on github.com:
+`https://github.com/johnmnc/vim-cli/blob/master/notes.md`
+
+
 # Vim
 
 * Help system
@@ -38,7 +42,7 @@ On a directory line, pressing `Enter` will change to that directory (including `
 
 On a line with a file, pressing `Enter` will open the file for editing.
 
-You can also press `'o'` to edit that file in split screen mode, with the new pane showing the file and the original pane showing the directory list.  Pressing `'v'` will open the file under the cursor in a verticall split window.
+You can also press `'o'` to edit that file in split screen mode, with the new pane showing the file and the original pane showing the directory list.  Pressing `'v'` will open the file under the cursor in a vertical split window.
 
 ![vim directory](vim-directory.png)
 
@@ -65,11 +69,16 @@ When starting Vim ``"vim -p filename ..."`` opens each file argument in a separa
 
 ## Some miscellaneous tips
 ### Line numbers
-Use the command `:set number` to turn on line numbers
+Use the command `:set number` to turn on line numbers.
+This is a good line to add to your `.vimrc` file.
 
 ### Visual selection
-Press `Shift-V` to begin visual marking of lines.
-Once a range is marked, you can use the `y` (yank) command to copy those lines into the register (which can then be pasted somewhere else with the `p` or `P` command).
+After moving the cursor to a line, press `Shift-V` to begin visual marking of lines.
+You can increase or decrease the selection by moving the cursor down or up.
+
+Once the range is selected, you can delete the selected lines with the `x` command.
+
+Additionally, you can use the `y` (yank) command to copy those lines into the register (which can then be pasted somewhere else with the `p` or `P` command).
 
 `Esc` will cancel the visual marking.
 
@@ -110,6 +119,11 @@ set number
 map ,D mx:r!date<CR>D`xP
 ```
 
+## And more
+* registers (`:help registers`)
+* gvim / macvim
+
+
 ## References
 * [Finally switching to vim](https://dev.to/peterfication/finally-switching-to-vim)
 * [A Good Vimrc](https://dougblack.io/words/a-good-vimrc.html)
@@ -122,7 +136,7 @@ All these keys and still no definitive way to exit Vim:
 
 ![exit vim](exit-vim.jpg)
 
-and . . . 
+and . . .
 
 [Real programmers](https://xkcd.com/378/)
 ![real programmers](real_programmers.png)
@@ -164,6 +178,11 @@ set -g prefix C-a
 unbind C-b
 bind C-a send-prefix
 ```
+:warning: **NOTE:**
+It is strongly recommended to change your tmux prefix character to `Ctrl-A`, as
+shown above, since the default tmux prefix character is `Ctrl-B`, which is the
+same as page up for VI.
+
 
 ## Sessions
 Multiple tmux servers running, hosting different sets of Windows
@@ -176,7 +195,7 @@ john@ubuntu:~$ tmux ls
 0: 3 windows (created Mon Apr 24 19:00:44 2017) [111x32] (attached)
 1: 1 windows (created Mon Apr 24 19:06:14 2017) [111x32]
 2: 1 windows (created Mon Apr 24 19:06:20 2017) [111x32]
-john@ubuntu:~$ 
+john@ubuntu:~$
 ```
 ### Attach to an existing session:
 ```
