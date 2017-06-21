@@ -1,7 +1,8 @@
 # Vim and unix CLI tips and tricks
 
 These notes are on github.com:
-`https://github.com/johnmnc/vim-cli/blob/master/notes.md`
+[https://github.com/johnmnc/vim-cli/blob/master/notes.md]
+
 
 
 # Vim
