@@ -2,6 +2,21 @@
 
 # Vim
 
+* Split screen
+* Directory navigation
+
+
+## Split screen
+Use the `:help split` command to learn
+* `Ctrl-W s` to split horizontally
+* `Ctrl-W v` to split vertically
+* `Ctrl-W w` to cursor to next window
+* `Ctrl-W c` to close a window
+
+Example:
+![vim splits](vim-3-panes.png)
+
+
 
 ## References
 * [Finally switching to vim](https://dev.to/peterfication/finally-switching-to-vim)
