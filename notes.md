@@ -2,8 +2,20 @@
 
 # Vim
 
+* Help system
 * Split screen
 * Directory navigation
+* Tabbed interface
+* miscellaneous tips
+
+## Help system
+Vim has an extensive help system built-in.  You can run `:help` to get to the main help screen, or you can run `:help <commnand_or_topic>` to get to individual help screens.
+
+For example:  `:help split`
+
+The help screens can be navigated similar to how you navigate `tags` database.  With the cursor on a keyword, `Ctrl-]` goes to that help topic, and `Ctrl-T` pops the help stack back one level (multiple levels are supported).
+
+To close the help window, use `:q`.
 
 
 ## Split screen
@@ -16,6 +28,55 @@ Use the `:help split` command to learn
 Example:
 ![vim splits](vim-3-panes.png)
 
+## Vim directory navigation
+You can invoke vim with a directory name, and it will display a listing of the directory.
+
+On a directory line, pressing `Enter` will change to that directory (including `..` to go up a level).
+
+
+On a line with a file, pressing `Enter` will open the file for editing.
+
+You can also press `'o'` to edit that file in split screen mode, with the new pane showing the file and the original pane showing the directory list.  Pressing `'v'` will open the file under the cursor in a verticall split window.
+
+![vim directory](vim-directory.png)
+
+## Tabbed 'windows'
+In addition to splitting the screen into multiple windows, vim supports a tabbed interface, where a single vim session can have multiple tabs.
+
+See `:help tab-page` to learn how to use tabs.
+
+* `:tabnew` opens a new tab
+* `:tabnext` (or `:tabn`) switches to the next tab
+* `:tabprev` (or `:tabp`) switches to the previous tab
+* `:tabclose` (or `:tabc`) closes the current tab
+* `:tabs` will list out the tab pages and the windows they contain
+
+
+There are shortcut key sequences for `:tabnext` and `:tabprev`
+* `gt` goes to the next tab
+* `gT` goes to the previous tab
+
+There are also commands to combine creating a tab and opening a file in that new tab: `:tabnew <filename>`.
+
+
+When starting Vim ``"vim -p filename ..."`` opens each file argument in a separate tab page.
+
+## Some miscellaneous tips
+### Line numbers
+Use the command `:set number` to turn on line numbers
+
+### Visual selection
+Press `Shift-V` to begin visual marking of lines.
+Once a range is marked, you can use the `y` (yank) command to copy those lines into the register (which can then be pasted somewhere else with the `p` or `P` command).
+
+`Esc` will cancel the visual marking.
+
+### Column selection
+Press `Ctrl-V` to begin column marking (a rectangular area).  Useful with the `x` command, to delete a rectangular area.
+You can also use `y` (yank) and `p` (paste) with rectangular regions.
+
+### Undo (and redo)
+In addition to the `u` (undo) command, vim has a re-do (basically undo the undo).  This is `Ctrl-R`.
 
 
 ## References
@@ -26,6 +87,8 @@ Example:
 
 ## However ....
 All these keys and still no definitive way to exit Vim:
+
+
 ![exit vim](exit-vim.jpg)
 
 and . . . 
@@ -37,10 +100,16 @@ and . . .
 ----
 # Tmux
 
+Tmux is similar to `screen` in many ways, allowing you to create a session (or multiple sessions) of terminal windows that stay running on the host even if you disconnect from that host.
+
+It supports multiple sessions, and each session can support multiple windows.
+
+
+
 [https://tmux.github.io/](https://tmux.github.io/)
 
 
-## Install
+## Installing tmux
 ### Linux
 ```
 sudo apt-get update
